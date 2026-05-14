@@ -1,0 +1,350 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* 包浩斯三原色 */
+  --color-bauhaus-red: #E63946;
+  --color-bauhaus-yellow: #F4D35E;
+  --color-bauhaus-blue: #1D3557;
+}
+
+:root {
+  --primary: #E63946;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #E63946;
+  --sidebar-primary-foreground: #FFFFFF;
+  --chart-1: #E63946;
+  --chart-2: #F4D35E;
+  --chart-3: #1D3557;
+  --chart-4: #FFFFFF;
+  --chart-5: #0a0a0a;
+  --radius: 0;
+  --background: #0a0a0a;
+  --foreground: #FFFFFF;
+  --card: #1a1a1a;
+  --card-foreground: #FFFFFF;
+  --popover: #1a1a1a;
+  --popover-foreground: #FFFFFF;
+  --secondary: #2a2a2a;
+  --secondary-foreground: #E5E7EB;
+  --muted: #4B5563;
+  --muted-foreground: #A0AEC0;
+  --accent: #F4D35E;
+  --accent-foreground: #0a0a0a;
+  --destructive: #E63946;
+  --destructive-foreground: #FFFFFF;
+  --border: #2D3748;
+  --input: #2D3748;
+  --ring: #E63946;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-accent: #F4D35E;
+  --sidebar-accent-foreground: #0a0a0a;
+  --sidebar-border: #2D3748;
+  --sidebar-ring: #E63946;
+}
+
+.dark {
+  --primary: #E63946;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #E63946;
+  --sidebar-primary-foreground: #FFFFFF;
+  --background: #0a0a0a;
+  --foreground: #FFFFFF;
+  --card: #1a1a1a;
+  --card-foreground: #FFFFFF;
+  --popover: #1a1a1a;
+  --popover-foreground: #FFFFFF;
+  --secondary: #2a2a2a;
+  --secondary-foreground: #E5E7EB;
+  --muted: #4B5563;
+  --muted-foreground: #A0AEC0;
+  --accent: #F4D35E;
+  --accent-foreground: #0a0a0a;
+  --destructive: #E63946;
+  --destructive-foreground: #FFFFFF;
+  --border: #2D3748;
+  --input: #2D3748;
+  --ring: #E63946;
+  --chart-1: #E63946;
+  --chart-2: #F4D35E;
+  --chart-3: #1D3557;
+  --chart-4: #FFFFFF;
+  --chart-5: #0a0a0a;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-accent: #F4D35E;
+  --sidebar-accent-foreground: #0a0a0a;
+  --sidebar-border: #2D3748;
+  --sidebar-ring: #E63946;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    font-family: 'Noto Sans JP', 'Poppins', system-ui, sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans JP', 'Poppins', system-ui, sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* 包浩斯風格組件 */
+  .bauhaus-card {
+    @apply bg-card border-2 border-foreground p-0 transition-all duration-300;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bauhaus-card-inner {
+    @apply p-6 relative z-10;
+  }
+
+  .bauhaus-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 rgba(230, 57, 70, 0.3);
+  }
+
+  .bauhaus-button {
+    @apply font-black text-lg px-6 py-3 border-2 border-foreground transition-all duration-200;
+    letter-spacing: -0.02em;
+  }
+
+  .bauhaus-button:hover {
+    transform: scale(0.98);
+  }
+
+  .bauhaus-button-primary {
+    @apply font-black text-lg px-6 py-3 border-2 border-foreground transition-all duration-200 bg-primary text-white;
+    letter-spacing: -0.02em;
+  }
+
+  .bauhaus-button-primary:hover {
+    transform: scale(0.98);
+  }
+
+  .bauhaus-button-secondary {
+    @apply font-black text-lg px-6 py-3 border-2 border-foreground transition-all duration-200 bg-background text-foreground;
+    letter-spacing: -0.02em;
+  }
+
+  .bauhaus-button-secondary:hover {
+    transform: scale(0.98);
+  }
+
+  .bauhaus-button-accent {
+    @apply font-black text-lg px-6 py-3 border-2 border-foreground transition-all duration-200 bg-accent text-background;
+    letter-spacing: -0.02em;
+  }
+
+  .bauhaus-button-accent:hover {
+    transform: scale(0.98);
+  }
+
+  /* 幾何形狀 */
+  .geometry-circle {
+    @apply rounded-full;
+  }
+
+  .geometry-square {
+    /* 方形 */
+  }
+
+  .geometry-triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid currentColor;
+  }
+
+  /* 評分色塊 */
+  .rating-block {
+    @apply inline-block w-6 h-6 mr-1 mb-1;
+  }
+
+  .rating-block-filled {
+    @apply bg-primary;
+  }
+
+  .rating-block-empty {
+    @apply bg-muted;
+    border: 1px solid currentColor;
+  }
+
+  /* 不規則網格 */
+  .irregular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    grid-auto-flow: dense;
+  }
+
+  .irregular-grid > :nth-child(3n + 1) {
+    grid-column: span 1;
+  }
+
+  .irregular-grid > :nth-child(3n + 2) {
+    grid-column: span 1;
+  }
+
+  .irregular-grid > :nth-child(3n) {
+    grid-column: span 1;
+  }
+
+  /* 大字體主視覺 */
+  .display-text {
+    @apply font-black text-6xl md:text-8xl leading-none;
+    letter-spacing: -0.03em;
+    font-family: 'Noto Sans CJK TC', sans-serif;
+    font-weight: 900;
+  }
+
+  .display-text-lg {
+    @apply font-black text-7xl md:text-9xl leading-none;
+    letter-spacing: -0.04em;
+    font-family: 'Noto Sans CJK TC', sans-serif;
+    font-weight: 900;
+  }
+
+  .display-mono {
+    @apply font-black text-5xl md:text-7xl leading-none;
+    letter-spacing: -0.02em;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+  }
+
+  .text-muted {
+    @apply text-muted-foreground;
+  }
+}
+
+/* 動畫 */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatMouse {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--mouse-x, 0), var(--mouse-y, 0));
+    opacity: 0;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.3s ease-out;
+}
+
+.animate-float-mouse {
+  animation: floatMouse 1s ease-out forwards;
+}
+
+/* 滑鼠跟著走的色塊 */
+.mouse-follower {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* 不規則排版 */
+.skew-text {
+  transform: skewX(-10deg);
+}
+
+.rotate-text {
+  transform: rotate(-2deg);
+}

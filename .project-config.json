@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663660237573/B7noqE6Z9qvLyys38mpQoP",
+    "access_key_id": "ASIAZV3A2ECZMZMWPFTC",
+    "secret_access_key": "/eMsCLAPxLxksE+dakfpT92SoTJgV918xgwRBxiB",
+    "session_token": "IQoJb3JpZ2luX2VjEJb//////////wEaCXVzLWVhc3QtMSJIMEYCIQCvPWOReua5X/91d+Q+IlxbFIPXMKLdMJCxB2Zuvt2NrgIhAJI45PXtPsN3mqY46+AuG2o0iALkmhxX907WXudeCUQuKvYDCF8QBBoMNjY1Mzg2MDk4ODY2IgyZQ4rEG47yKvtBy0Uq0wOtuUugdP0V8KQLGJDpSIwiqQu10KdgeVCbkMr6Jv/rmu2lUsG7HM4PhqyEtws0xVtNaYKRvmbcp7rcR6qmP1u8XtcqmTHLAg4SShCA07ctMUxjMAgOec4j5qywii3swWaWAXmmUESmrn4dgjaCH90QHOWyPoq4uDff1vXnXeZWFufsTx2KiR5EjxExWPXbaf2//sH9xvB6PoDk7nNDJxtfxSahcyxS0pYZ59ZJxqOzi3rTrvCojLuSTQ9RNnFBC2R7Lw0KygO0zroKd4axLtcWqmQhoNUeEkbKFO9hzjkBhVXEHngeS8T7r1ONCVoybaDtQHfseod1Kn0z+Cuvyubz5YQJdhsbnKs22eB2GvMrDrmTylBQ8bimSabVjJsiS+FiAPqg8z6p+Lq5I5DC2gycS+fYAey+rEN3n2mHukSOZsxd6cfnK2dUvdgUfHIJ0VYV9uJ3btlEVwP52ezmC9P8SmgenKJe4FSM/A7VMi/wkKz3HC4vJspLOYvsBGINMRSZDJJOsEZD3pgszSljlTlV4dgKmoGOe/8d/dGhHcsxsZpyeHCP82ReWmW7fiZJDZgAfVp0Iyns3hwNI7Wjivf4WgdGYaizR6CNAGK2vPscMbsRlTDnppfQBjqcARlyFgFeZ7VktQfzzlVA/66dAEbM/n0wkFVPpQGB/xTIfFoZTo8WjJzZvyLvfe+fhccTSIFmo/RFQYwnfP4XPui4fUdaCSmmXGGeLKy89eiJodEJUetHKvWxOb2QDO8KBTqK2ryZenJ8MmNQYga+IUwPPmpET59yG5gAmCpZ6khWehuOayaIu0jRjXbC6RlOurJK7/lbBzxNm2+krw==",
+    "expiration": "2026-05-15T01:51:35.000Z"
+  },
+  "name": "anime-archive",
+  "path": "/home/ubuntu/anime-archive",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "Qwxe8cQjAgCNcz4kJvL5RQ",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "nKXXiEe4giiAkKsuEZnTsZ",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "晉德 廖",
+    "OWNER_OPEN_ID": "kkPhDkp9VmfdZASnuRLTfV",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "8bf62ca9-b2a7-4cf4-a0f5-b03263c1b48c",
+    "VITE_APP_ID": "B7noqE6Z9qvLyys38mpQoP",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "Anime Archive - 動畫觀影心得",
+    "VITE_FRONTEND_FORGE_API_KEY": "iCntPYJnZjr8U7dGfHxZ8t",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
