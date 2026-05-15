@@ -17,7 +17,7 @@ export async function initializeData(): Promise<AnimeEntry[]> {
 
   // 從備份文件加載
   try {
-    const response = await fetch('/anime-data.json');
+    const response = await fetch(`${import.meta.env.BASE_URL}anime-data.json`);
     const backup = await response.json();
     const entries = backup.entries || [];
     localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
