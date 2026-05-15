@@ -1,18 +1,20 @@
 import { AnimeEntry } from '@/lib/types';
 import { useState } from 'react';
 
-/**
- * 動畫卡片組件 - 包浩斯風格
- * 幾何評分、邊框強調、懸停偏移效果
- */
 interface AnimeCardProps {
   entry: AnimeEntry;
+}
+
+function extractYear(title: string): string | null {
+  const match = title.match(/[（(](\d{4})[）)]/);
+  return match ? match[1] : null;
 }
 
 export default function AnimeCard({ entry }: AnimeCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const hasRating = entry.rating > 0;
   const hasReview = entry.review.trim().length > 0;
+  const year = extractYear(entry.title);
 
   // 用幾何色塊表示評分
   const renderRatingBlocks = () => {
@@ -54,10 +56,17 @@ export default function AnimeCard({ entry }: AnimeCardProps) {
       <div className="bauhaus-card-inner space-y-3">
         {/* 標題 */}
         <div>
-          <h3 className="font-black text-lg leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-2">
-            {entry.title}
-          </h3>
-          <p className="text-xs font-bold text-muted-foreground mt-1 uppercase tracking-widest">
+          <div className="flex items-start justify-between gap-2 mb-1">
+            <h3 className="font-black text-lg leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-2 flex-1">
+              {entry.title}
+            </h3>
+            {year && (
+              <span className="shrink-0 text-xs font-black bg-accent text-accent-foreground px-2 py-0.5 leading-tight">
+                {year}
+              </span>
+            )}
+          </div>
+          <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
             {entry.series}
           </p>
         </div>

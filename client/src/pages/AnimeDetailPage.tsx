@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'wouter';
+
+function extractYear(title: string): string | null {
+  const match = title.match(/[（(](\d{4})[）)]/);
+  return match ? match[1] : null;
+}
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -104,7 +109,14 @@ export default function AnimeDetailPage() {
           <div className="bauhaus-card-inner space-y-8">
             {/* 標題區域 */}
             <div>
-              <h1 className="display-text-lg text-foreground leading-tight mb-4">{anime.title}</h1>
+              <div className="flex items-start gap-4 mb-4">
+                <h1 className="display-text-lg text-foreground leading-tight flex-1">{anime.title}</h1>
+                {extractYear(anime.title) && (
+                  <span className="shrink-0 text-base font-black bg-accent text-accent-foreground px-3 py-1 mt-1">
+                    {extractYear(anime.title)}
+                  </span>
+                )}
+              </div>
               <p className="text-lg font-bold text-primary">{anime.series}</p>
               <p className="text-sm font-bold text-muted-foreground mt-2 uppercase tracking-widest">
                 {anime.season && `${anime.season} • `}
