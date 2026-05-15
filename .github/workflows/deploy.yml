@@ -27,7 +27,7 @@ jobs:
           node-version: 20
           cache: pnpm
 
-      - run: pnpm install
+      - run: pnpm install --frozen-lockfile --ignore-scripts
 
       - run: node_modules/.bin/vite build --base /anime-archive/
 
