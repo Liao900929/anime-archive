@@ -11,6 +11,7 @@ from api.telegram import TelegramClient
 from config import Settings
 from models import MarketData
 from monitor.alert import AlertChecker
+from monitor.signal import SignalAnalyzer
 
 logger = logging.getLogger(__name__)
 
@@ -19,6 +20,7 @@ class MarketMonitor:
     def __init__(self, settings: Settings) -> None:
         self._settings = settings
         self._alert_checker = AlertChecker(settings)
+        self._signal_analyzer = SignalAnalyzer(settings)
         self._latest_price: float | None = None
         self._latest_funding_rate: float | None = None
         self._running = False
@@ -150,10 +152,15 @@ class MarketMonitor:
         )
         logger.info("%s", market_data)
 
-        should_alert, reason = self._alert_checker.check_and_update(market_data)
+        should_alert, oi_change_pct = self._alert_checker.check_and_update(market_data)
         if should_alert:
-            message = AlertChecker.format_message(market_data, reason)
-            logger.warning("Alert triggered!\n%s", reason)
+            signal = self._signal_analyzer.analyze(market_data, oi_change_pct)
+            message = AlertChecker.format_message(market_data, signal)
+            logger.warning(
+                "Signal triggered: %s | confidence=%s",
+                signal.direction.value,
+                signal.confidence,
+            )
             try:
                 await telegram.send_message(message)
             except Exception as exc:  # noqa: BLE001

@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
 from datetime import datetime
+from enum import Enum
 
 
 @dataclass
@@ -23,3 +24,19 @@ class MarketData:
 class AlertState:
     previous_open_interest: float | None = None
     last_alert_time: datetime | None = None
+
+
+class SignalDirection(Enum):
+    LONG = "LONG"
+    SHORT = "SHORT"
+    NEUTRAL = "NEUTRAL"
+
+
+@dataclass
+class TradeSignal:
+    direction: SignalDirection
+    confidence: str          # HIGH / MEDIUM / LOW
+    funding_rate: float
+    oi_change_pct: float
+    reasons: list[str]
+    risk_note: str

@@ -23,7 +23,8 @@ class Settings(BaseSettings):
     MONITOR_INTERVAL: int = 60  # seconds
 
     # Alert thresholds
-    FUNDING_RATE_THRESHOLD: float = 0.03
+    FUNDING_RATE_THRESHOLD: float = 0.03         # positive extreme → SHORT signal
+    NEGATIVE_FUNDING_RATE_THRESHOLD: float = -0.03  # negative extreme → LONG signal
     OPEN_INTEREST_CHANGE_THRESHOLD: float = 0.05
     ALERT_COOLDOWN_MINUTES: int = 30
 
