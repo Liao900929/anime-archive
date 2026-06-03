@@ -236,6 +236,13 @@ export default function Home() {
                 聲優資料庫
               </button>
             </Link>
+
+            {/* 部門頁面連結 */}
+            <Link href="/departments">
+              <button className="bauhaus-button-secondary w-full">
+                部門介紹
+              </button>
+            </Link>
           </div>
         </div>
 
