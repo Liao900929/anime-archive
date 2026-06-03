@@ -1,9 +1,5 @@
 import { Link } from 'wouter';
 
-/**
- * Header 組件 - 包浩斯風格
- * 大字體主視覺、幾何形狀、不對稱排版
- */
 export default function Header() {
   return (
     <header className="bg-background border-b-4 border-foreground relative overflow-hidden">
@@ -34,9 +30,16 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* 右上角 VOL. 標籤 */}
-        <div className="absolute top-8 right-8 border-2 border-accent bg-accent text-background px-4 py-2 font-black text-lg">
-          VOL. 01
+        {/* 右上角 VOL. 標籤 + 部門導覽 */}
+        <div className="absolute top-8 right-8 flex items-center gap-3">
+          <Link href="/departments">
+            <button className="border-2 border-foreground text-foreground px-4 py-2 font-black text-sm hover:bg-foreground hover:text-background transition-colors">
+              DEPTS
+            </button>
+          </Link>
+          <div className="border-2 border-accent bg-accent text-background px-4 py-2 font-black text-lg">
+            VOL. 01
+          </div>
         </div>
       </div>
     </header>

@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import VoiceActorsPage from "./pages/VoiceActorsPage";
 import AnimeDetailPage from "./pages/AnimeDetailPage";
+import DepartmentsPage from "./pages/DepartmentsPage";
 
 
 function Router() {
@@ -15,6 +16,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/voice-actors"} component={VoiceActorsPage} />
       <Route path={"/anime/:id"} component={AnimeDetailPage} />
+      <Route path={"/departments"} component={DepartmentsPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
